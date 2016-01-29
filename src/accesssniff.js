@@ -216,7 +216,7 @@ export default class Accessibility {
         this.options.accessibilityLevel
       ], (error, stdout) => {
         if (error) {
-          logger.generError(error);
+          logger.generalError(error);
           deferredOutside.fulfill(error);
         }
 
