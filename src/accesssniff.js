@@ -141,6 +141,12 @@ export default class Accessibility {
     let messageLog = [];
 
     fileMessages.every(messageString => {
+
+      // If a message comes through undefined, skip it.
+      if (!messageString) {
+        return true;
+      }
+
       // Each message will return as an array, [messageType, messagePipe]
       // Message Pipe needs to be sent through to the terminal for parsing
       const message = JSON.parse(messageString);
